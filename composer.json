@@ -1,0 +1,20 @@
+{
+    "name": "JonathanPort/genuine-email-validator",
+    "description": "A Laravel 5 Service to easily validate and verify if an Email Address is genuine or not. Uses the free MailboxLayer API (Quotas Apply).",
+    "type": "laravel-service",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "JonathanPort",
+            "email": "hello@jonathanport.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "JonathanPort\\GenuineEmailValidator\\": "/src"
+        }
+    }
+}
