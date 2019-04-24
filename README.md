@@ -3,8 +3,8 @@ A Laravel 5 Service to easily validate and verify if an Email Address is genuine
 
 
 # Requirements
-* Laravel 5.8 although this package will work without laravel but the autoloading is designed for Laravel.
-* PHP 5.6>
+* Laravel 5
+* PHP 7
 * Guzzle ^6.3
 
 
@@ -27,12 +27,12 @@ class TestController extends Controller
 
   public function test(GenuineEmailValidator $validator)
   {
-    
+
      $validator->emailAddressIsGenuine('hello@jonathanport.com'); // Returns Mailbox Feedback or false
      $validator->emailAddressIsValid('hello@jonathanport.com', $uniqueColumn = 'users'); // Returns simple Laravel Email Validator
-    
+
   }
-    
+
 }
 
 
