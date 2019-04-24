@@ -1,5 +1,5 @@
 {
-    "name": "JonathanPort/genuine-email-validator",
+    "name": "jonathanport/genuine-email-validator",
     "description": "A Laravel 5 Service to easily validate and verify if an Email Address is genuine or not. Uses the free MailboxLayer API (Quotas Apply).",
     "type": "laravel-service",
     "require": {
