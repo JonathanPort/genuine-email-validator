@@ -20,7 +20,9 @@ Before using, make sure to add your Mailbox Layer API key into your project's .e
 $service = new GenuineEmailValidator($key = 'YOUR_KEY_HERE');
 ```
 
-To use the service, create a new instance of the service or pass the service a controller method parameter via dependency injection. The service contains two public methods:
+To use the service, create a new instance of the service or pass the service as a controller method parameter via dependency injection. 
+
+The service contains two public methods:
 
 
 ```php
