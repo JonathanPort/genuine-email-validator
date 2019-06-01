@@ -1,5 +1,4 @@
-# genuine-email-validator
-A Laravel 5 Service to easily validate and verify if an Email Address is genuine or not. Uses the free MailboxLayer API (Quotas Apply).
+A simple Laravel 5 Service to easily validate and verify if an Email Address is genuine or not. Uses the free MailboxLayer API (Quotas Apply).
 
 
 # Requirements
@@ -14,7 +13,7 @@ A Laravel 5 Service to easily validate and verify if an Email Address is genuine
 
 
 # Usage
-Before using, make sure to add your Mailbox Layer API key into your project's .env under: `MAILBOXLAYER_KEY`. Alternitively, you can pass the key through to the class when making a new instance:
+Before using, make sure to add your Mailbox Layer API key into your project's .env under: `MAILBOXLAYER_KEY`. Alternatively, you can pass the key through to the class when making a new instance:
 
 ```php
 $service = new GenuineEmailValidator($key = 'YOUR_KEY_HERE');
@@ -37,14 +36,14 @@ use JonathanPort\GenuineEmailValidator\GenuineEmailValidator;
 class TestController extends Controller
 {
 
-  public function test(GenuineEmailValidator $validator)
+  public function test(GenuineEmailValidator $service)
   {
     
      // Returns Mailbox Feedback or false
-     $validator->emailAddressIsGenuine('hello@jonathanport.com');
+     $service->emailAddressIsGenuine('hello@jonathanport.com');
      
      // Returns standard Laravel Email Validator Instance
-     $validator->emailAddressIsValid('hello@jonathanport.com', $uniqueColumn = 'users');
+     $service->emailAddressIsValid('hello@jonathanport.com', $uniqueColumn = 'users');
 
   }
 
