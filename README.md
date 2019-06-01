@@ -6,6 +6,7 @@ A Laravel 5 Service to easily validate and verify if an Email Address is genuine
 * Laravel 5
 * PHP 7
 * Guzzle ^6.3
+* Mailbox Layer Account
 
 
 # Installation
@@ -13,6 +14,15 @@ A Laravel 5 Service to easily validate and verify if an Email Address is genuine
 
 
 # Usage
+Before using, make sure to add your Mailbox Layer API key into your project's .env under: `MAILBOXLAYER_KEY`. Alternitively, you can pass the key through to the class when making a new instance:
+
+```php
+$service = new GenuineEmailValidator($key = 'YOUR_KEY_HERE');
+```
+
+To use the service, create a new instance of the service or pass the service a controller method parameter via dependency injection. The service contains two public methods:
+
+
 ```php
 
 <?php
@@ -27,9 +37,12 @@ class TestController extends Controller
 
   public function test(GenuineEmailValidator $validator)
   {
-
-     $validator->emailAddressIsGenuine('hello@jonathanport.com'); // Returns Mailbox Feedback or false
-     $validator->emailAddressIsValid('hello@jonathanport.com', $uniqueColumn = 'users'); // Returns simple Laravel Email Validator
+    
+     // Returns Mailbox Feedback or false
+     $validator->emailAddressIsGenuine('hello@jonathanport.com');
+     
+     // Returns standard Laravel Email Validator Instance
+     $validator->emailAddressIsValid('hello@jonathanport.com', $uniqueColumn = 'users');
 
   }
 
@@ -37,5 +50,11 @@ class TestController extends Controller
 
 
 ```
+
+# MailboxLayer API Usage Notes
+Note:
+MailboxLayer is a free API but has a limited request quota. There should be enough monthly quota to get you by for dev testing but to use for a production site, I would strongly suggest upgrading to the "Basic Plan". It's $9.99 / mo with a 20% discount if paid for yearly. $9.99 gets you 5000 requests per month to play around with. Handy for new sites with limited traffic or small startup applicatons on a budget.
+
+Use sparingly and avoid making any crazy loops that could eat up your request quota and you'll be fine.
 
 
